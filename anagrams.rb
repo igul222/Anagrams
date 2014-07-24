@@ -48,11 +48,12 @@ until unflipped.empty? && flipped.empty?
 
   # Accept input in the form of [player #][word played]
   # Empty input means "flip a tile"
-
-  case (input = gets.strip)
+  input = gets.strip
+  system('clear')
+  case input
   when /([0-9])([a-z]+)/
     player = $1.to_i
-    word = $2.chars
+    word = $2.upcase.chars
 
     puts "Player #{player} played '#{word.join('')}'."
 
